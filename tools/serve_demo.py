@@ -177,6 +177,7 @@ def handler_factory(runtime: DiagnosticRuntime, identity_result: dict[str, Any],
             body = (json.dumps(payload, separators=(",", ":"), default=str) + "\n").encode("utf-8")
             self._headers(status, "application/json; charset=utf-8", len(body), extra_headers=extra_headers)
             self.wfile.write(body)
+            self.wfile.flush()
 
         def _api_response(self, response: ApiResponse) -> None:
             self._json(response.status, response.payload, response.headers)
@@ -237,6 +238,7 @@ def handler_factory(runtime: DiagnosticRuntime, identity_result: dict[str, Any],
             cache = "public, max-age=31536000, immutable" if target.parent.name == "assets" else "no-store"
             self._headers(HTTPStatus.OK, content_type, len(body), cache)
             self.wfile.write(body)
+            self.wfile.flush()
 
         def do_POST(self) -> None:  # noqa: N802
             parsed = urllib.parse.urlsplit(self.path)

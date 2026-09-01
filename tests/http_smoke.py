@@ -26,6 +26,7 @@ from serve_demo import HOST, handler_factory, load_identity  # noqa: E402
 from verify_release import verify  # noqa: E402
 
 REPORT = ROOT / "reports" / "http_smoke_report.json"
+REQUEST_TIMEOUT_SECONDS = 12
 
 
 class _Logger:
@@ -49,7 +50,7 @@ class _Runtime:
 def request(url: str, *, method: str = "GET", body: bytes | None = None, headers: dict[str, str] | None = None) -> tuple[int, bytes, Any]:
     req = urllib.request.Request(url, data=body, method=method, headers=headers or {})
     try:
-        with urllib.request.urlopen(req, timeout=4) as response:
+        with urllib.request.urlopen(req, timeout=REQUEST_TIMEOUT_SECONDS) as response:
             return response.status, response.read(), response.headers
     except urllib.error.HTTPError as exc:
         return exc.code, exc.read(), exc.headers

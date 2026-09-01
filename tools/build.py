@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 import shutil
 import subprocess
 from datetime import datetime, timezone
@@ -26,7 +27,40 @@ MANAGED_RUNTIME_FILES = (
 
 
 def run(command: list[str]) -> None:
+    if os.name == "nt" and Path(command[0]).suffix.lower() in {".cmd", ".bat"}:
+        command_shell = os.environ.get("ComSpec") or shutil.which("cmd.exe")
+        if not command_shell:
+            raise RuntimeError("Windows command shell is unavailable for the build tool shim.")
+        command_line = subprocess.list2cmdline(command)
+        subprocess.run(
+            command_line,
+            cwd=ROOT,
+            check=True,
+            shell=True,
+            executable=command_shell,
+        )
+        return
     subprocess.run(command, cwd=ROOT, check=True)
+
+
+def typescript_command() -> list[str]:
+    """Return a directly executable TypeScript compiler command."""
+    node_override = os.environ.get("OIAP_NODE_EXE", "").strip()
+    compiler_override = os.environ.get("OIAP_TSC_JS", "").strip()
+    if node_override or compiler_override:
+        if not node_override or not compiler_override:
+            raise RuntimeError("OIAP_NODE_EXE and OIAP_TSC_JS must be provided together.")
+        if not Path(node_override).is_file() or not Path(compiler_override).is_file():
+            raise RuntimeError("The configured TypeScript compiler override is unavailable.")
+        return [node_override, compiler_override]
+
+    compiler = shutil.which("tsc")
+    if not compiler:
+        raise RuntimeError(
+            "TypeScript compiler not found. Install the locked build tool or set "
+            "OIAP_NODE_EXE and OIAP_TSC_JS."
+        )
+    return [compiler]
 
 
 def sha256(path: Path) -> str:
@@ -133,7 +167,7 @@ def main() -> None:
         shutil.rmtree(DIST)
     DIST.mkdir(parents=True, exist_ok=True)
     write_generated_release(version, str(metadata["build"]))
-    run(["tsc", "--project", "tsconfig.json", "--pretty", "false"])
+    run([*typescript_command(), "--project", "tsconfig.json", "--pretty", "false"])
     copy_public()
     copy_runtime_catalogs()
     write_runtime_identity(version, metadata)
