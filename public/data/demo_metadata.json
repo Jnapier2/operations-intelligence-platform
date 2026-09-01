@@ -1,0 +1,26 @@
+{
+  "name": "Synthetic Service Operations Demo",
+  "description": "Deterministic synthetic service-request records with intentional operational patterns and bounded data-quality defects.",
+  "seed": 20260828,
+  "analysis_date": "2026-08-24T18:00:00Z",
+  "period_start": "2026-04-27T08:00:00Z",
+  "period_end": "2026-08-24T18:00:00Z",
+  "row_count": 1354,
+  "intentional_issue_counts": {
+    "missing_location": 14,
+    "missing_team": 7,
+    "invalid_satisfaction": 5,
+    "closed_before_created": 4,
+    "unknown_category": 4,
+    "invalid_sla": 3,
+    "duplicate_id": 8
+  },
+  "scenario_notes": [
+    "Billing & Payments demand rises during the final two weeks, concentrated in the South Service Center.",
+    "Account Access resolution and reopen performance improves after a July 15 knowledge intervention.",
+    "Field Operations experiences a smaller recent capacity pressure signal.",
+    "A bounded set of missing, invalid, unmapped, and duplicate records is included for governance demonstrations."
+  ],
+  "generated_at": "2026-08-28T10:00:00Z",
+  "copyright": "Copyright © 2026 Gateway Information Group LLC. All rights reserved."
+}

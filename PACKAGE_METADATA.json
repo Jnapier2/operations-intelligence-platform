@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "canonical_project_name": "Professional Portfolio \u2014 Operations Intelligence & Automation Platform",
+  "display_name": "Operations Intelligence & Automation Platform",
+  "showcase_module": "Service Operations Command Center",
+  "package_id": "operations-intelligence-platform",
+  "version": "0.3.1",
+  "build": "OIAP-0.3.1-20260831-FIELDLOG1",
+  "release_channel": "field-log-hardening",
+  "publisher": "Gateway Information Group LLC",
+  "copyright": "Copyright \u00a9 2026 Gateway Information Group LLC. All rights reserved.",
+  "source_baseline": "Gateway shared project defaults v2.17.13",
+  "source_baseline_sha256": "63BDA0B5F61BA44F18F55C5B75512085ED3A2FE67C575E3406A5877ECD5F4566",
+  "runtime": {
+    "production": "Standards-based browser modules and static assets",
+    "local_server": "Python 3.11+ standard library with SQLite3 governed operational store",
+    "build_tool": "TypeScript compiler 5.8.3 or compatible"
+  },
+  "deployment": {
+    "primary": "Netlify static showcase plus governed local-server enterprise demonstration",
+    "publish_directory": "dist",
+    "optional_function": "netlify/functions/summary.mjs"
+  },
+  "data_classification": "Synthetic demo data; project-local governed SQLite state; derived process intelligence; browser-local uploaded data only in static fallback",
+  "release_date": "2026-08-31",
+  "execution": {
+    "namespace": "OperationsIntelligence",
+    "canonical_entrypoint": "OperationsIntelligence.bat",
+    "approved_launcher_files": [
+      "OperationsIntelligence.bat"
+    ],
+    "approved_aliases": [],
+    "action_registry": [
+      {
+        "id": "launch-demo",
+        "launcher": "OperationsIntelligence.bat",
+        "backend": "tools/serve_demo.py"
+      },
+      {
+        "id": "doctor",
+        "launcher": "OperationsIntelligence.bat",
+        "backend": "tools/serve_demo.py --check"
+      },
+      {
+        "id": "rebuild-test-verify",
+        "launcher": "OperationsIntelligence.bat",
+        "backend": "tools/generate_demo_data.py -> tools/build.py -> tests/run_tests.mjs -> tests/platform_foundation_test.py -> tests/release_contract_test.py -> tests/http_smoke.py -> tools/verify_release.py"
+      },
+      {
+        "id": "support-export",
+        "launcher": "OperationsIntelligence.bat",
+        "backend": "tools/create_support_export.py"
+      },
+      {
+        "id": "open-exports",
+        "launcher": "OperationsIntelligence.bat",
+        "backend": "shell:project-local-exports"
+      },
+      {
+        "id": "diagnostic-self-test",
+        "launcher": "OperationsIntelligence.bat",
+        "backend": "tools/serve_demo.py --diagnostic-self-test"
+      }
+    ]
+  }
+}

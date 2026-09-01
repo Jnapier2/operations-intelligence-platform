@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "slos": [
+    {
+      "id": "release_gate",
+      "name": "Release identity gate",
+      "target": "100% pass",
+      "owner": "Platform Reliability"
+    },
+    {
+      "id": "ingestion_success",
+      "name": "Ingestion success rate",
+      "target": ">= 99%",
+      "owner": "Data Operations"
+    },
+    {
+      "id": "ingestion_freshness",
+      "name": "Governed ingestion freshness",
+      "target": "<= 360 minutes",
+      "owner": "Data Operations"
+    },
+    {
+      "id": "data_quality",
+      "name": "Data-quality score",
+      "target": ">= 95%",
+      "owner": "Data Stewardship"
+    },
+    {
+      "id": "case_followthrough",
+      "name": "Case follow-through",
+      "target": ">= 80% active cases moved beyond Open",
+      "owner": "Service Operations"
+    },
+    {
+      "id": "alert_review",
+      "name": "Reviewed alert precision / usefulness",
+      "target": ">= 75% confirmed signal and >= 75% useful",
+      "owner": "Operations Analytics"
+    },
+    {
+      "id": "duplicate_processing",
+      "name": "Duplicate ingestion processing",
+      "target": "0 duplicate datasets reprocessed",
+      "owner": "Platform Reliability"
+    }
+  ]
+}

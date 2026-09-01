@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "catalog_id": "service-operations-kpis",
+  "effective_date": "2026-08-29",
+  "kpis": [
+    {
+      "id": "open_backlog",
+      "name": "Open backlog",
+      "version": "1.0.0",
+      "definition": "Requests created on or before the analysis date that do not have a valid closed timestamp on or before that date.",
+      "formula": "count(created_at <= analysis_date AND (closed_at IS NULL OR closed_at > analysis_date))",
+      "grain": "Request",
+      "window": "Point-in-time",
+      "owner": "Service Operations",
+      "source_fields": ["request_id","created_at","closed_at"],
+      "target": "Stable or declining unless demand growth is planned",
+      "limitations": "Historical backlog is reconstructed from created and closed timestamps because intermediate status history is not present."
+    },
+    {
+      "id": "sla_attainment",
+      "name": "SLA attainment",
+      "version": "1.0.0",
+      "definition": "Share of trusted closed requests completed within their stated service-level target.",
+      "formula": "count(resolution_hours <= sla_hours) / count(trusted closed requests) * 100",
+      "grain": "Closed request",
+      "window": "Trailing 28 days",
+      "owner": "Operations Analytics",
+      "source_fields": ["status","closed_at","sla_hours","resolution_hours"],
+      "target": ">= 85%",
+      "limitations": "Excludes quarantined rows and does not adjust targets for customer-requested pauses."
+    },
+    {
+      "id": "median_resolution_hours",
+      "name": "Median resolution time",
+      "version": "1.0.0",
+      "definition": "Median elapsed resolution hours across trusted closed requests.",
+      "formula": "median(resolution_hours)",
+      "grain": "Closed request",
+      "window": "Trailing 28 days",
+      "owner": "Operations Analytics",
+      "source_fields": ["status","closed_at","resolution_hours"],
+      "target": "Trend downward while SLA attainment remains healthy",
+      "limitations": "Resolution hours are supplied by the source system; paused time is not separately modeled."
+    },
+    {
+      "id": "reopen_rate",
+      "name": "Reopen rate",
+      "version": "1.0.0",
+      "definition": "Share of trusted closed requests marked as reopened.",
+      "formula": "count(reopened = true) / count(trusted closed requests) * 100",
+      "grain": "Closed request",
+      "window": "Trailing 28 days",
+      "owner": "Service Quality",
+      "source_fields": ["status","closed_at","reopened"],
+      "target": "<= 8%",
+      "limitations": "The source contains a final reopened indicator rather than full reopen-event history."
+    },
+    {
+      "id": "customer_satisfaction",
+      "name": "Customer satisfaction",
+      "version": "1.0.0",
+      "definition": "Mean valid satisfaction score among trusted records with survey responses.",
+      "formula": "avg(satisfaction_score where 1 <= score <= 5)",
+      "grain": "Surveyed request",
+      "window": "Current loaded dataset",
+      "owner": "Customer Experience",
+      "source_fields": ["satisfaction_score"],
+      "target": ">= 4.2 / 5",
+      "limitations": "Survey non-response can create selection bias."
+    },
+    {
+      "id": "data_quality_score",
+      "name": "Data-quality score",
+      "version": "1.0.0",
+      "definition": "Weighted defect score across documented completeness, validity, uniqueness, consistency, and timeliness rules.",
+      "formula": "max(0, 1 - weighted_defects / (row_count * critical_weight)) * 100",
+      "grain": "Dataset",
+      "window": "Current ingestion",
+      "owner": "Data Stewardship",
+      "source_fields": ["all governed source fields"],
+      "target": ">= 95%",
+      "limitations": "A high score means the documented rules passed; it does not prove business correctness beyond those rules."
+    }
+  ]
+}

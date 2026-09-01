@@ -1,0 +1,17 @@
+[build]
+  command = "python3 tools/verify_release.py"
+  publish = "dist"
+  functions = "netlify/functions"
+
+[build.environment]
+  PYTHON_VERSION = "3.13"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=()"
+    Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'self'; form-action 'self'"
+    Cache-Control = "public, max-age=0, must-revalidate"

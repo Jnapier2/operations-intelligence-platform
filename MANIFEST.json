@@ -1,0 +1,265 @@
+{
+  "schema_version": 2,
+  "project": "Operations Intelligence & Automation Platform",
+  "package_id": "operations-intelligence-platform",
+  "version": "0.3.1",
+  "build": "OIAP-0.3.1-20260831-FIELDLOG1",
+  "release_channel": "field-log-hardening",
+  "generated_at": "2026-09-01T06:30:08.800477+00:00",
+  "managed_roots": [
+    "dist",
+    "netlify/functions",
+    "config",
+    "db/migrations"
+  ],
+  "managed_runtime_files": [
+    "tools/serve_demo.py",
+    "tools/operational_store.py",
+    "tools/platform_api.py",
+    "tools/source_connectors.py",
+    "tools/diagnostic_runtime.py",
+    "tools/create_support_export.py"
+  ],
+  "managed_file_count": 46,
+  "control_file_sha256": {
+    "VERSION.txt": "79e3f22ca37c7fdf4c29ae3648d6b008c3cb6547260a453409275470919dc674",
+    "PACKAGE_METADATA.json": "6e8883e1764ab0f79e31b0dbd3c791116a718f6d72804467817e223916a1c61c",
+    "SBOM.json": "7083be819b5dca9e02380bc747d5d997439c553517582e51404422f2e64e8b65",
+    "netlify.toml": "3694bac386916e2866395c2cdf284420697d36474bd3fea29f8167a5917b0890",
+    "OperationsIntelligence.bat": "f41e2df3b045dbe8fe747f447b983e61027dd42c31b6151fff2e153d928e50a3",
+    "tools/verify_release.py": "98836d5b3995bb3679e950ad7f60fd8a7c25e216d07f08f30209f66760cb0f09"
+  },
+  "files": [
+    {
+      "path": "config/automation_catalog.json",
+      "size": 2635,
+      "sha256": "7609a001b626c52e4d0b4f26e7a82522738b5c462e08815ff64073478298a617"
+    },
+    {
+      "path": "config/data_contract.json",
+      "size": 1220,
+      "sha256": "6e832349c268a3969827833b6163c45d32fa116e4528453555d562441af56e63"
+    },
+    {
+      "path": "config/improvement_catalog.json",
+      "size": 2754,
+      "sha256": "b8b07a0ef9e6916403da6be81b4dcac453c676938450fd7b70eda085e050ceab"
+    },
+    {
+      "path": "config/kpi_catalog.json",
+      "size": 3800,
+      "sha256": "68d692a2419f39a33de708563322a1e4c538b10a24ef2806de44838813a01acb"
+    },
+    {
+      "path": "config/playbook_catalog.json",
+      "size": 1682,
+      "sha256": "4b493a49f7a2e9e1da9388d198fca0cf04831c6732e35bc696587887f9afb8f5"
+    },
+    {
+      "path": "config/slo_catalog.json",
+      "size": 1191,
+      "sha256": "9466e3d893fd1ea45432a67a4608bf3e649bd7cad13e3bffb07038a52e08c1ce"
+    },
+    {
+      "path": "config/source_connectors.json",
+      "size": 329,
+      "sha256": "19be5844ec1535d4845e1cdc7f043c7228fc502b79b89c0f268f047d0adf947d"
+    },
+    {
+      "path": "db/migrations/001_initial.sql",
+      "size": 4350,
+      "sha256": "20a0bccd1725b10cd71270c5e980536fbc76b9cdd78da376b1cd425ba5efb0d3"
+    },
+    {
+      "path": "db/migrations/002_semantic_observability.sql",
+      "size": 1422,
+      "sha256": "e2a8c50fd09796d978451865ddae833d91a43f5f6f648a6965369b5876f5dbc1"
+    },
+    {
+      "path": "db/migrations/003_source_adapter_registry.sql",
+      "size": 116,
+      "sha256": "520a1a590c40dee8cc0b3b4d2e6935ddd7964ad81f97a82c46a3515e013f2bdd"
+    },
+    {
+      "path": "db/migrations/004_closed_loop_intelligence.sql",
+      "size": 2441,
+      "sha256": "687c7964789018154bfbddaf44ff7500563e375aee06a274ecb9bf71c81fe752"
+    },
+    {
+      "path": "dist/assets/analytics.js",
+      "size": 33099,
+      "sha256": "8c04c402f88bac910f4c8fbb1a0e878b220a01d13f1a46ca3196c046213fd4aa"
+    },
+    {
+      "path": "dist/assets/analytics.js.map",
+      "size": 33524,
+      "sha256": "722461422ba28b78eedde5930c666353f9f19878c275e7c90e962834b5359a05"
+    },
+    {
+      "path": "dist/assets/api.js",
+      "size": 6687,
+      "sha256": "f15eed0fd1a7b2a5db8a8e35e101fe1bcc92e0499c7a9e06d03be5c32dbcbc71"
+    },
+    {
+      "path": "dist/assets/api.js.map",
+      "size": 6697,
+      "sha256": "00302f2ff7d36e11e034a3b612ad947cf3a0629582c572c460e22e0fc95c1c1a"
+    },
+    {
+      "path": "dist/assets/app.js",
+      "size": 126769,
+      "sha256": "23d58812fc6dbd8d9d7ae1b0cfd932d4201b6c940800c8aa17b98c597e0cf3f6"
+    },
+    {
+      "path": "dist/assets/app.js.map",
+      "size": 84734,
+      "sha256": "0cb48c87efd5eefc57e3d4e5928ac9a2763243de7a81f331da90898ab5640bb0"
+    },
+    {
+      "path": "dist/assets/charts.js",
+      "size": 7679,
+      "sha256": "4c85e7acb08e560f7b187dfe082b59f8c5e0a8d72483c4ba36d851cd6e0c5c86"
+    },
+    {
+      "path": "dist/assets/charts.js.map",
+      "size": 8577,
+      "sha256": "4891d8b93db0dd8ec3335a30af1058a8299cc1f2319e013d058ad4ef4aa40a36"
+    },
+    {
+      "path": "dist/assets/csv.js",
+      "size": 12377,
+      "sha256": "9b9cca2afeb75971250c6d237aec59f0687d963bcf223f2e744bf566b22296d1"
+    },
+    {
+      "path": "dist/assets/csv.js.map",
+      "size": 12351,
+      "sha256": "a59c543d8922ceb9881a8892986dd49c2da8bef72bc4f85bda8b13eb1c853c85"
+    },
+    {
+      "path": "dist/assets/diagnostics.js",
+      "size": 3495,
+      "sha256": "32346e5cdfea0b6099a5904da6a339c41b53e4dc003bf32a0d6e75a24e2da354"
+    },
+    {
+      "path": "dist/assets/diagnostics.js.map",
+      "size": 3502,
+      "sha256": "637a49a6b2d620844ee51124d4bb2add004325e398dc52347b681125b1c478fe"
+    },
+    {
+      "path": "dist/assets/intelligence.js",
+      "size": 23172,
+      "sha256": "899836069c6c4adb5c041a792eb627cba20743e5fb96425cf73d94b015b6ca01"
+    },
+    {
+      "path": "dist/assets/intelligence.js.map",
+      "size": 23479,
+      "sha256": "dfb7d8b5b42c8eabbdb5c4f90b2891754075a2953cc8a978782589ea09f4bed8"
+    },
+    {
+      "path": "dist/assets/release.generated.js",
+      "size": 214,
+      "sha256": "0db5a25098a76a29aff3da6a749b673c29a953b62e72d0541da6ec88ebad7382"
+    },
+    {
+      "path": "dist/assets/release.generated.js.map",
+      "size": 224,
+      "sha256": "412cba2ed4102646597e05c7e6f95097d5c90bf42cf852ba1ecbf256aaae237e"
+    },
+    {
+      "path": "dist/assets/storage.js",
+      "size": 5033,
+      "sha256": "450d1ab9aa88b98ba77a5592db1d495cbca1908d35a092bac1c408d338471fec"
+    },
+    {
+      "path": "dist/assets/storage.js.map",
+      "size": 5097,
+      "sha256": "a19d784899c7231629fa337eba597cbdc66f052ec3c8ffdf1f24e6e3b9c8fd33"
+    },
+    {
+      "path": "dist/assets/types.js",
+      "size": 44,
+      "sha256": "01ae2a5b120382f9a648ced7ee8507493a134f216d100fc61600c6c9738235d2"
+    },
+    {
+      "path": "dist/assets/types.js.map",
+      "size": 105,
+      "sha256": "17307f7387fbcf31645bdc6c61dd25c80edefb6fbacbb2909f503b879227b631"
+    },
+    {
+      "path": "dist/data/automation_catalog.json",
+      "size": 2635,
+      "sha256": "7609a001b626c52e4d0b4f26e7a82522738b5c462e08815ff64073478298a617"
+    },
+    {
+      "path": "dist/data/demo_metadata.json",
+      "size": 1144,
+      "sha256": "26d8c2fc44b2dca221b3901b5a347a1f718ac96ad0994ea4aa050559381c3c25"
+    },
+    {
+      "path": "dist/data/improvement_catalog.json",
+      "size": 2754,
+      "sha256": "b8b07a0ef9e6916403da6be81b4dcac453c676938450fd7b70eda085e050ceab"
+    },
+    {
+      "path": "dist/data/playbook_catalog.json",
+      "size": 1682,
+      "sha256": "4b493a49f7a2e9e1da9388d198fca0cf04831c6732e35bc696587887f9afb8f5"
+    },
+    {
+      "path": "dist/data/service_requests_demo.csv",
+      "size": 302953,
+      "sha256": "829d40a348e81d786807111c196a11a2012c587cc21f3f247a763868b16fb6ad"
+    },
+    {
+      "path": "dist/index.html",
+      "size": 894,
+      "sha256": "eb2b3549ff6c5733177347a33d2ed9e31d1b64b134ae199d3cf5bfdc27c4c8c4"
+    },
+    {
+      "path": "dist/release.json",
+      "size": 448,
+      "sha256": "c3b02990024382f688d2696e66bc21eab9fcb8a058b44f2de93908591c332a9f"
+    },
+    {
+      "path": "dist/styles.css",
+      "size": 55714,
+      "sha256": "0be51fc15d713d48153f71e5ad4c5128728a80b7b500f945ed4a96a73e2e4ad6"
+    },
+    {
+      "path": "netlify/functions/summary.mjs",
+      "size": 5325,
+      "sha256": "c9a28f348c8856d5573c2aa067be80849bda4231d5dd7f88a2f8b1d1216c097e"
+    },
+    {
+      "path": "tools/create_support_export.py",
+      "size": 17963,
+      "sha256": "c4baa010555e3702714e47e223ae19a9621677dfe223ef7ad60a9698c799adf6"
+    },
+    {
+      "path": "tools/diagnostic_runtime.py",
+      "size": 18815,
+      "sha256": "19cb98ea32c08e7d73af821712e494e7a6823ba1fedce172822a9c2103753647"
+    },
+    {
+      "path": "tools/operational_store.py",
+      "size": 61237,
+      "sha256": "0a26db39c76d81e90c9a28fbf8fadd174e6af4b09b686a8474b4874a99b28e1d"
+    },
+    {
+      "path": "tools/platform_api.py",
+      "size": 16118,
+      "sha256": "73f15384bb66e35762134bf3f8a6434cb3702d5d74a3cfdb7ed9fab29aac15a4"
+    },
+    {
+      "path": "tools/serve_demo.py",
+      "size": 25415,
+      "sha256": "4fe33fe9bf0a859dac55523966d5abe7053f372e8dca36fac8124206bf668c90"
+    },
+    {
+      "path": "tools/source_connectors.py",
+      "size": 3304,
+      "sha256": "73e28cef9e27c243a994c1fa090f9f333dadaa2d93ca6cdd882544523121d190"
+    }
+  ],
+  "rights": "Copyright \u00a9 2026 Gateway Information Group LLC. All rights reserved."
+}

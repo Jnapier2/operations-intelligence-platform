@@ -1,0 +1,10 @@
+Operations Intelligence & Automation Platform
+Copyright © 2026 Gateway Information Group LLC. All rights reserved.
+
+This first-party source is published for portfolio review, evaluation, and
+demonstration. Permission is granted to inspect and execute an unmodified copy
+for those purposes. No permission is granted to sell, sublicense, republish,
+remove notices from, or distribute modified or derivative versions without
+written authorization from Gateway Information Group LLC.
+
+Third-party components remain governed by their respective licenses and notices.

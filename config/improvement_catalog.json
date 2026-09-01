@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "problems": [
+    {
+      "id": "PROB-001",
+      "title": "Recurring Billing SLA breaches",
+      "status": "Investigating",
+      "owner": "Operations Manager",
+      "hypothesis": "Routing and rework patterns are contributing to repeated Billing & Payments misses.",
+      "evidence": [
+        "Billing & Payments is a priority service-level signal",
+        "South Service Center has elevated miss contribution",
+        "Reopened work increases rework exposure"
+      ],
+      "created_at": "2026-08-24T18:20:00+00:00"
+    },
+    {
+      "id": "PROB-002",
+      "title": "Controlled taxonomy exceptions",
+      "status": "Monitoring",
+      "owner": "Data Steward",
+      "hypothesis": "A bounded set of source-category defects can distort category-level reporting if not quarantined.",
+      "evidence": [
+        "Data-quality score 97.6%",
+        "Blocking category defects are quarantined",
+        "Contract-driven ingestion exposes affected rows"
+      ],
+      "created_at": "2026-08-24T18:25:00+00:00"
+    }
+  ],
+  "initiatives": [
+    {
+      "id": "INIT-001",
+      "problem_id": "PROB-001",
+      "title": "Account Access knowledge workflow",
+      "status": "Completed",
+      "owner": "Operations Analyst",
+      "baseline_metric": "Reopen rate",
+      "baseline_value": 12.5,
+      "target_value": 8.0,
+      "measured_value": 7.2,
+      "unit": "%",
+      "hours_saved_monthly": 38.0,
+      "backlog_avoided": 24,
+      "sla_improvement_points": 0.0,
+      "confidence_pct": 88.0,
+      "started_at": "2026-07-20T18:00:00+00:00",
+      "reviewed_at": "2026-08-24T18:00:00+00:00"
+    },
+    {
+      "id": "INIT-002",
+      "problem_id": "PROB-001",
+      "title": "Resolution workflow simplification",
+      "status": "Completed",
+      "owner": "Operations Manager",
+      "baseline_metric": "Median resolution hours",
+      "baseline_value": 31.0,
+      "target_value": 26.0,
+      "measured_value": 24.4,
+      "unit": " hrs",
+      "hours_saved_monthly": 62.0,
+      "backlog_avoided": 41,
+      "sla_improvement_points": 4.1,
+      "confidence_pct": 84.0,
+      "started_at": "2026-07-20T18:00:00+00:00",
+      "reviewed_at": "2026-08-24T18:00:00+00:00"
+    },
+    {
+      "id": "INIT-003",
+      "problem_id": "PROB-001",
+      "title": "Billing backlog recovery",
+      "status": "Active",
+      "owner": "Service Delivery Lead",
+      "baseline_metric": "SLA attainment",
+      "baseline_value": 56.1,
+      "target_value": 85.0,
+      "measured_value": 68.0,
+      "unit": "%",
+      "hours_saved_monthly": 24.0,
+      "backlog_avoided": 18,
+      "sla_improvement_points": 11.9,
+      "confidence_pct": 72.0,
+      "started_at": "2026-08-24T18:00:00+00:00",
+      "reviewed_at": null
+    }
+  ]
+}

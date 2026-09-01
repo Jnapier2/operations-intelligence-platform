@@ -1,0 +1,8 @@
+Operations Intelligence & Automation Platform
+Service Operations Command Center
+
+Copyright © 2026 Gateway Information Group LLC. All rights reserved.
+
+This notice applies to first-party source code, documentation, generated demo data,
+and original visual assets in this package. Preserve any third-party notices and
+licenses if third-party components are added in a future release.

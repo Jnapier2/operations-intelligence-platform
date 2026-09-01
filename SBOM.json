@@ -1,0 +1,92 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "serialNumber": "urn:uuid:2ff72b77-0e31-49ad-9c52-operations-intelligence-031",
+  "version": "0.3.1",
+  "metadata": {
+    "component": {
+      "type": "application",
+      "name": "Operations Intelligence & Automation Platform",
+      "version": "0.3.1",
+      "supplier": {
+        "name": "Gateway Information Group LLC"
+      },
+      "copyright": "Copyright \u00a9 2026 Gateway Information Group LLC. All rights reserved."
+    }
+  },
+  "components": [],
+  "properties": [
+    {
+      "name": "runtime-dependencies",
+      "value": "Python standard library / sqlite3 only for governed local mode; none for static showcase"
+    },
+    {
+      "name": "browser-runtime",
+      "value": "Standards-based ES2022 modules"
+    },
+    {
+      "name": "local-server",
+      "value": "Python standard library plus sqlite3; no third-party runtime package"
+    },
+    {
+      "name": "build-tool",
+      "value": "TypeScript 5.8.3; external developer tool, not shipped at runtime"
+    },
+    {
+      "name": "browser-qa-tool",
+      "value": "Playwright for Python 1.57.0 with Chromium; CI/test-only, not shipped at runtime"
+    },
+    {
+      "name": "parameter-baseline",
+      "value": "Gateway shared project defaults v2.17.13 / SHA-256 63BDA0B5F61BA44F18F55C5B75512085ED3A2FE67C575E3406A5877ECD5F4566"
+    },
+    {
+      "name": "canonical-entrypoint",
+      "value": "OperationsIntelligence.bat"
+    },
+    {
+      "name": "durable-state",
+      "value": "SQLite3 project-local operational store with controlled SQL migrations"
+    },
+    {
+      "name": "authentication",
+      "value": "Local portfolio demo credentials use salted PBKDF2-HMAC-SHA256 verifiers; sessions use HttpOnly SameSite=Strict cookies and in-memory CSRF tokens; production IdP/SSO not included"
+    },
+    {
+      "name": "data-contract",
+      "value": "config/data_contract.json"
+    },
+    {
+      "name": "kpi-semantic-layer",
+      "value": "config/kpi_catalog.json"
+    },
+    {
+      "name": "source-adapter-registry",
+      "value": "config/source_connectors.json"
+    },
+    {
+      "name": "build-tool-lock",
+      "value": "BUILD_TOOLS.lock.json"
+    },
+    {
+      "name": "process-intelligence",
+      "value": "src/intelligence.ts; derived variants/root factors/object graph with explicit non-causal boundary"
+    },
+    {
+      "name": "automation-catalog",
+      "value": "config/automation_catalog.json"
+    },
+    {
+      "name": "playbook-catalog",
+      "value": "config/playbook_catalog.json"
+    },
+    {
+      "name": "improvement-catalog",
+      "value": "config/improvement_catalog.json"
+    },
+    {
+      "name": "external-write-boundary",
+      "value": "Project-local case creation only; no third-party operational write-back enabled"
+    }
+  ]
+}

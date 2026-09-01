@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "project": "Operations Intelligence & Automation Platform",
+  "showcase_module": "Service Operations Command Center",
+  "version": "0.3.1",
+  "build": "OIAP-0.3.1-20260831-FIELDLOG1",
+  "package_id": "operations-intelligence-platform",
+  "publisher": "Gateway Information Group LLC",
+  "release_channel": "field-log-hardening",
+  "copyright": "Copyright \u00a9 2026 Gateway Information Group LLC. All rights reserved."
+}

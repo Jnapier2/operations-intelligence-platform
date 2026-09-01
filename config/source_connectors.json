@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "connectors": [
+    {
+      "id": "demo-local",
+      "type": "local_csv",
+      "enabled": true,
+      "path": "dist/data/service_requests_demo.csv",
+      "dataset_name": "Synthetic Service Operations Demo",
+      "source_name": "project-local canonical demo",
+      "max_bytes": 8388608
+    }
+  ]
+}

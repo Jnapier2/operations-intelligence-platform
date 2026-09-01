@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "playbooks": [
+    {
+      "id": "PB-BILLING-RECOVERY",
+      "name": "Billing backlog recovery",
+      "description": "Evidence-first response to growing Billing & Payments work and service-level deterioration.",
+      "steps": [
+        "Validate release identity and data freshness",
+        "Confirm backlog and SLA thresholds",
+        "Inspect category, team, and location contribution",
+        "Review reopened and high-priority process paths",
+        "Run capacity scenario",
+        "Assign mitigation owner and due date",
+        "Record baseline and target",
+        "Measure seven-day outcome"
+      ]
+    },
+    {
+      "id": "PB-SLA-RECOVERY",
+      "name": "Service-level recovery",
+      "description": "Structured investigation and follow-up for a location or team with material SLA risk.",
+      "steps": [
+        "Validate source and KPI definition",
+        "Confirm the highest-risk segment",
+        "Inspect process bottleneck signals",
+        "Review routing and reopen patterns",
+        "Choose mitigation",
+        "Assign accountable owner",
+        "Set recovery target",
+        "Measure and close or escalate"
+      ]
+    },
+    {
+      "id": "PB-DATA-QUALITY",
+      "name": "Governed data-quality response",
+      "description": "Resolve data defects without publishing misleading operational metrics.",
+      "steps": [
+        "Confirm affected quality rules",
+        "Inspect quarantined rows",
+        "Classify root defect source",
+        "Correct source mapping or contract",
+        "Re-run governed ingestion",
+        "Verify trusted-row delta",
+        "Document limitation or closure"
+      ]
+    }
+  ]
+}

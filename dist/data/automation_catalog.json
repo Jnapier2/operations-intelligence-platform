@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "rules": [
+    {
+      "id": "AUTO-BACKLOG-SLA",
+      "name": "Backlog + SLA recovery",
+      "description": "Escalate when backlog growth and service-level deterioration occur together with enough trusted evidence.",
+      "enabled": true,
+      "severity": "High",
+      "owner_role": "Operations Manager",
+      "cooldown_minutes": 10080,
+      "dedupe_key": "backlog-sla-recovery",
+      "conditions": [
+        {"metric": "backlogChangePct", "operator": ">", "value": 25},
+        {"metric": "slaAttainmentPct", "operator": "<", "value": 80},
+        {"metric": "trustedRows", "operator": ">=", "value": 20}
+      ],
+      "action": {
+        "type": "create_case",
+        "title": "Activate backlog and SLA recovery",
+        "owner": "Operations Manager",
+        "priority": "High",
+        "expectedImpact": "Restore throughput balance and service-level attainment with measured seven-day follow-up."
+      }
+    },
+    {
+      "id": "AUTO-DATA-QUALITY",
+      "name": "Data-quality stewardship",
+      "description": "Create a stewardship action when trusted-data quality falls below the portfolio publishing threshold.",
+      "enabled": true,
+      "severity": "High",
+      "owner_role": "Data Steward",
+      "cooldown_minutes": 1440,
+      "dedupe_key": "data-quality-stewardship",
+      "conditions": [
+        {"metric": "qualityScore", "operator": "<", "value": 98.5},
+        {"metric": "issueRowCount", "operator": ">", "value": 0}
+      ],
+      "action": {
+        "type": "create_case",
+        "title": "Resolve governed data-quality exceptions",
+        "owner": "Data Steward",
+        "priority": "High",
+        "expectedImpact": "Reduce publishing risk by resolving quarantined or controlled data defects."
+      }
+    },
+    {
+      "id": "AUTO-CAPACITY-WATCH",
+      "name": "Throughput capacity watch",
+      "description": "Escalate sustained throughput pressure before backlog growth becomes a larger service problem.",
+      "enabled": true,
+      "severity": "Medium",
+      "owner_role": "Operations Analyst",
+      "cooldown_minutes": 4320,
+      "dedupe_key": "capacity-watch",
+      "conditions": [
+        {"metric": "closureToIntakeRatio", "operator": "<", "value": 0.9},
+        {"metric": "openBacklog", "operator": ">=", "value": 25}
+      ],
+      "action": {
+        "type": "create_case",
+        "title": "Review capacity and queue-aging pressure",
+        "owner": "Operations Analyst",
+        "priority": "Medium",
+        "expectedImpact": "Identify a bounded staffing, routing, or workload-mix response before backlog accelerates."
+      }
+    }
+  ]
+}

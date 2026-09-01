@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "purpose": "Reproducible developer and CI build-tool expectations; no third-party runtime packages are required by the application.",
+  "python": "3.13",
+  "node": "22",
+  "typescript": "5.8.3",
+  "playwright_python": "1.57.0",
+  "playwright_browser": "Chromium installed by Playwright 1.57.0 for CI/browser acceptance",
+  "runtime_dependencies": [],
+  "rights": "Copyright © 2026 Gateway Information Group LLC. All rights reserved."
+}
