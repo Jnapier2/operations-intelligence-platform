@@ -138,7 +138,7 @@ Governed local mode persists ingestion runs, KPI versions, cases, audit events, 
 Scheduled ingestion resolves through a source-adapter registry. The release intentionally ships only a bounded local CSV adapter, giving future approved source systems one ingress boundary rather than parallel parsing/validation processes.
 
 ### Server-enforced demonstration roles
-The local server validates deliberately public portfolio demo credentials, issues HttpOnly SameSite sessions, enforces permissions server-side, requires CSRF on writes, rejects cross-site requests, and requires JSON content. This is explicitly not production SSO.
+The local server validates documented demonstration credentials, issues HttpOnly SameSite sessions, enforces permissions server-side, requires CSRF on writes, rejects cross-site requests, and requires JSON content. This is explicitly not production SSO.
 
 ### Transparent semantic layer
 KPI definitions expose version, owner, formula, grain, window, target, source fields, effective date, and limitations.

@@ -4,9 +4,19 @@
   "canonical_project_name": "Professional Portfolio \u2014 Operations Intelligence & Automation Platform",
   "files": [
     {
+      "path": ".gitattributes",
+      "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da",
+      "size": 8
+    },
+    {
       "path": ".github/workflows/release-gate.yml",
-      "sha256": "9bddc1ef10aff5397b0878b72b46f9ebdd804e36a8b2fdf4df9a9a5a26548a9a",
-      "size": 1830
+      "sha256": "69794664950965e4796d37338be5be1543a4d70f8da7bb4d7988a7c042920cdb",
+      "size": 2002
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "4590b39730362dcff4005af2de4418329067aac60940bb29fabc9072dabd81c1",
+      "size": 346
     },
     {
       "path": "BUILD_LEDGER.md",
@@ -105,12 +115,12 @@
     },
     {
       "path": "dist/assets/app.js",
-      "sha256": "23d58812fc6dbd8d9d7ae1b0cfd932d4201b6c940800c8aa17b98c597e0cf3f6",
-      "size": 126769
+      "sha256": "e055a38c8d6629f48cfb78fd54ee5d67a245e6bc0eb386d6613028d956a7d067",
+      "size": 126741
     },
     {
       "path": "dist/assets/app.js.map",
-      "sha256": "0cb48c87efd5eefc57e3d4e5928ac9a2763243de7a81f331da90898ab5640bb0",
+      "sha256": "e5a8d4f4f02c59d8c2dbaaa0efbec84d7af74d26315f1f68ccc3cd1981ddd2ef",
       "size": 84734
     },
     {
@@ -215,8 +225,8 @@
     },
     {
       "path": "dist/release.json",
-      "sha256": "c3b02990024382f688d2696e66bc21eab9fcb8a058b44f2de93908591c332a9f",
-      "size": 448
+      "sha256": "089086236e5ecd8091737777f4567b019511f80819e96273a9146a1a31d3c0bf",
+      "size": 459
     },
     {
       "path": "dist/styles.css",
@@ -250,13 +260,13 @@
     },
     {
       "path": "docs/PORTFOLIO_CASE_STUDY.md",
-      "sha256": "dcac97d2bb125a1fa1ff0266472a733aa9dbdde67e5c6f1b8b5bb1bac405bd05",
-      "size": 9649
+      "sha256": "a32918c177e3a8b14078c603b835201179963639d9758362cb210c0c536fdc0d",
+      "size": 9639
     },
     {
       "path": "docs/PROCESS_INTELLIGENCE_METHOD.md",
-      "sha256": "37d967fc1a41c92d4b8dbbf7324c0a025ee8f2e34079a012de22687eb9ff91ec",
-      "size": 2304
+      "sha256": "f655558701197aa9547a5008c93f9690a7c9183b1332149062b421672d1c86aa",
+      "size": 2297
     },
     {
       "path": "docs/RECRUITER_DEMO_SCRIPT.md",
@@ -265,12 +275,17 @@
     },
     {
       "path": "KNOWN_GOOD_STATE.md",
-      "sha256": "7cb3c9aeb98d9bde6bb7ebc9c738ab9c49d9176069b385d3430bd6875d75ce8e",
-      "size": 2489
+      "sha256": "f1c17b0a45d33c572609a74df234f220e04bb3f38b7ed4b0a929732b4297a097",
+      "size": 2329
+    },
+    {
+      "path": "LICENSE.txt",
+      "sha256": "f4ee30e40d7f982ff44a614d6ec079a891148f8962e7d842fb791d3f3e2ae3e5",
+      "size": 563
     },
     {
       "path": "MANIFEST.json",
-      "sha256": "72c8c81b92541ad5583bd9b47336a9a542a5f8c1a2d913db2b30a1b0ebafbb16",
+      "sha256": "4fd8058ea87bcf7ecdefef238a178cc2481a1f68efb33383fce0f01d8cf142fa",
       "size": 9022
     },
     {
@@ -315,98 +330,48 @@
     },
     {
       "path": "README.md",
-      "sha256": "e2389f2ad77ea0fd49aa20cabd4595821e40fcaa7b7a27b2dbbc2e88e70a8746",
-      "size": 9053
-    },
-    {
-      "path": "reports/browser/01_command_center.png",
-      "sha256": "f0f7c059a332a4b8231893bb3e04d7eaa398c470c3b214381a35bda672e4f7d4",
-      "size": 708566
-    },
-    {
-      "path": "reports/browser/02_analysis_lab.png",
-      "sha256": "35135035e3a020a8266605916a1a5f7643c246d6c0d7155860ae158754a12b5b",
-      "size": 641528
-    },
-    {
-      "path": "reports/browser/03_process_intelligence.png",
-      "sha256": "f5f59003890de8e4c3cdb2e1d98fb7b3b16089dbccf29d3a2e6a91be49fc7c9f",
-      "size": 715143
-    },
-    {
-      "path": "reports/browser/04_automation_improvement.png",
-      "sha256": "4918d2a69c2f683531d55ecabaf838ee62495a2af7bae02fe5646f245fa41a43",
-      "size": 694287
-    },
-    {
-      "path": "reports/browser/05_operations_analyst.png",
-      "sha256": "cfe9e798a1ea2ecee0a470eb9136475c4d3415b45456f2cc7407353b15bde204",
-      "size": 349431
-    },
-    {
-      "path": "reports/browser/06_action_followup.png",
-      "sha256": "32a5390a4f15298377c0c95dcf7f24c57855066c56c97d979e593bb2780c1147",
-      "size": 331487
-    },
-    {
-      "path": "reports/browser/07_data_governance.png",
-      "sha256": "842bce171464dc297892bbe360042a5e9841fa3106e02a81087088e4524314db",
-      "size": 654504
-    },
-    {
-      "path": "reports/browser/08_system_health.png",
-      "sha256": "2878b6fe272281884848ecf3074196bfea1c760da3095313b81d361a1d327a7f",
-      "size": 272053
-    },
-    {
-      "path": "reports/browser/09_mobile_navigation.png",
-      "sha256": "62a9610a8c8f6351c1e1b216d2101ce557333fb09426fe9f6cef770baba456a8",
-      "size": 77554
-    },
-    {
-      "path": "reports/browser_smoke_report.json",
-      "sha256": "26f3b9b99d679b3fff454f9cd49a5845ecb9756fee5575cf13545e7446e8358b",
-      "size": 1189
-    },
-    {
-      "path": "reports/FIELD_EVIDENCE_REVIEW_20260831.md",
-      "sha256": "830d02559a3f4f1e7bb0ca6007280e35dad2cfbe1918392148dae1e146657124",
-      "size": 2426
+      "sha256": "a8211bdacc75c2e9fca1bffbf9ab7347bf7eb28d3d60c3e40636cd5e72fb0cff",
+      "size": 8924
     },
     {
       "path": "reports/http_smoke_report.json",
-      "sha256": "4e2208a389f495f92af4506f0677e45bd88dec2e12b6c13f34b33c62d24230ea",
-      "size": 18511
+      "sha256": "51663b6951573bf9597ebabca36b3608d21f52638ea396f54efa7c63c27d8d03",
+      "size": 19150
     },
     {
       "path": "reports/package_inventory_report.json",
-      "sha256": "59395667cb219dc31a5979d635da08d4e868d16acfeec4ebbff3b062ce5771a2",
-      "size": 3242
+      "sha256": "b386803b0e80895266fb1c1ecbeda350b4eb73b9ec8150045895c309a24aba5b",
+      "size": 3245
     },
     {
       "path": "reports/platform_foundation_test_report.json",
-      "sha256": "ed715b071c1450ca176b58efb38967130fa06bbe1cf44964ff9fd0651ae726a1",
+      "sha256": "fa9d214cbb4bfc2b3a48b74ed10b875fda849407638408aa3f85eb3a2c43ed9b",
       "size": 18444
     },
     {
       "path": "reports/release_contract_test_report.json",
-      "sha256": "b623d60a2ab2dccecd845754d34e7f5275db7f0384586db24f0c45a0118c1138",
+      "sha256": "872cf53928f596203f18bcffe17101ebf859f0c3f0630801db91d18ca7fbc081",
       "size": 3445
     },
     {
       "path": "reports/test_report.json",
-      "sha256": "8c80045a50ed9c2fe272556ae7a1ba8fc9ed4892381da6879d37533eb5370dce",
+      "sha256": "207acff46d76f2d828321ef79d7b1f7ec82bceee3589e85c16b720b973097b68",
       "size": 4734
     },
     {
       "path": "reports/verification_report.json",
-      "sha256": "029c2ab0148fab0fd238db2cab3c3b6402465f3b7d7cff16c0bd1d95c2dbd8cb",
+      "sha256": "7d2bd30f23ad109130af931fa3111b045d56051610f8e17944db45737d76a2b9",
       "size": 4311
     },
     {
       "path": "SBOM.json",
       "sha256": "7083be819b5dca9e02380bc747d5d997439c553517582e51404422f2e64e8b65",
       "size": 2804
+    },
+    {
+      "path": "SECURITY.md",
+      "sha256": "acb61cc6de413a657f11bef8b1e3652db7f66664c1bade20030a1fe638274cea",
+      "size": 767
     },
     {
       "path": "src/analytics.ts",
@@ -420,8 +385,8 @@
     },
     {
       "path": "src/app.ts",
-      "sha256": "9ad1e27f1eee6139319053fe9f63f140c43dafb60f4f972e2aa9f00a006d1136",
-      "size": 127089
+      "sha256": "2878cf3bb329c0cdb68b8add0e30fe858f4612165a1a51e9bdc40da62c6f8bba",
+      "size": 127061
     },
     {
       "path": "src/charts.ts",
@@ -445,8 +410,8 @@
     },
     {
       "path": "src/release.generated.ts",
-      "sha256": "4edb9a14472128ebcdbcfc3145a98f87800e25723161ea8808bf1a237221f861",
-      "size": 169
+      "sha256": "1211c518cf37fccfa43a36a603637c9ad823cb95204668f869c3881e4da7fb9f",
+      "size": 172
     },
     {
       "path": "src/storage.ts",
@@ -465,8 +430,8 @@
     },
     {
       "path": "tests/http_smoke.py",
-      "sha256": "6a3a26983490fd78b9b6c1a4a09dbfac52a80231996e4cd0bdd78a320c850add",
-      "size": 18981
+      "sha256": "e6c4966dddc0e1c991f6f364870a9fb4636239ab0d74c72d3806941852db5d2f",
+      "size": 19190
     },
     {
       "path": "tests/platform_foundation_test.py",
@@ -485,13 +450,13 @@
     },
     {
       "path": "tools/build.py",
-      "sha256": "38608020172a25381dfcd2d71f4b5f3908e089d686068025df6293c28e02bf91",
-      "size": 5335
+      "sha256": "222ebc58f632a17a5f72fc406ccecf568bce7e12a48037f65ac01718904dd996",
+      "size": 6787
     },
     {
       "path": "tools/create_support_export.py",
-      "sha256": "c4baa010555e3702714e47e223ae19a9621677dfe223ef7ad60a9698c799adf6",
-      "size": 17963
+      "sha256": "583998de918f69c9f9f4f225ce96275cb7b39a5e8364e2334b16f4fd4f94021c",
+      "size": 17965
     },
     {
       "path": "tools/diagnostic_runtime.py",
@@ -520,8 +485,8 @@
     },
     {
       "path": "tools/serve_demo.py",
-      "sha256": "4fe33fe9bf0a859dac55523966d5abe7053f372e8dca36fac8124206bf668c90",
-      "size": 25415
+      "sha256": "44970786cbceba449c357ed8f3fd8894096d633d40836d03367394d3a6ba93f7",
+      "size": 25477
     },
     {
       "path": "tools/source_connectors.py",
@@ -544,9 +509,9 @@
       "size": 6
     }
   ],
-  "generated_at": "2026-09-01T06:27:08.780421+00:00",
+  "generated_at": "2026-09-01T08:07:34.071245+00:00",
   "index_self_excluded": true,
-  "indexed_file_count": 108,
+  "indexed_file_count": 101,
   "package_id": "operations-intelligence-platform",
   "project": "Operations Intelligence & Automation Platform",
   "rights": "Copyright \u00a9 2026 Gateway Information Group LLC. All rights reserved.",

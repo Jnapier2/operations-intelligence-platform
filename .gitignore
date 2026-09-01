@@ -23,6 +23,7 @@ reports/*
 !reports/.gitkeep
 backups/*
 !backups/.gitkeep
+release-output/
 *.db
 *.db-wal
 *.db-shm

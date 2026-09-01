@@ -319,7 +319,7 @@ def main() -> int:
             "fingerprint": args.fingerprint,
             "created_at": created.isoformat(),
             "automatic": args.automatic,
-            "sensitivity": "project-internal; redacted",
+            "sensitivity": "support-diagnostic; redacted",
             "tags": ["operations-intelligence", "diagnostics", "export20", "portfolio"],
             "lineage": "Gateway shared project defaults v2.17.13 / source-package DIAGNOSTIC_EXPORT_SPEC.md",
             "rights": "Copyright © 2026 Gateway Information Group LLC. All rights reserved.",

@@ -4,7 +4,7 @@
 
 The demonstration service dataset has request-level creation, closure, assignment, category, priority, SLA, reopen, and outcome evidence. It does **not** contain a complete event log of every intermediate workflow transition.
 
-A portfolio project should not invent those missing events. v0.3.0 therefore implements a transparent derived-process method.
+The analysis should not invent those missing events. v0.3.0 therefore implements a transparent derived-process method.
 
 ## Derived path
 

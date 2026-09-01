@@ -1,15 +1,14 @@
 # Save State / Qualification Status
 
-Canonical project: **Professional Portfolio — Operations Intelligence & Automation Platform**
+Canonical project: **Operations Intelligence & Automation Platform**
 
-## Current maintenance candidate
+## Current release
 
 - Version: **0.3.1**
 - Build: `OIAP-0.3.1-20260831-FIELDLOG1`
-- Theme: **Field Log Hygiene & Evidence Hardening**
+- Scope: field-log hygiene and evidence hardening.
 - Baseline: exact v0.3.0 full archive.
-- Parameter baseline: Gateway shared project defaults v2.17.13.
-- Promotion state: source-tree-qualified maintenance candidate; exact frozen archive qualification is recorded externally after packaging. Norton-on exact-artifact acceptance remains external.
+- Qualification: source-tree and GitHub release gates passed. Norton-on exact-artifact acceptance remains a separate native-Windows check.
 
 
 ## v0.3.1 source-tree qualification

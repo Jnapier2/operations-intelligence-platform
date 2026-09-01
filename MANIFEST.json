@@ -5,7 +5,7 @@
   "version": "0.3.1",
   "build": "OIAP-0.3.1-20260831-FIELDLOG1",
   "release_channel": "field-log-hardening",
-  "generated_at": "2026-09-01T07:32:30.285376+00:00",
+  "generated_at": "2026-09-01T08:01:04.511843+00:00",
   "managed_roots": [
     "dist",
     "netlify/functions",
@@ -107,13 +107,13 @@
     },
     {
       "path": "dist/assets/app.js",
-      "size": 126769,
-      "sha256": "23d58812fc6dbd8d9d7ae1b0cfd932d4201b6c940800c8aa17b98c597e0cf3f6"
+      "size": 126741,
+      "sha256": "e055a38c8d6629f48cfb78fd54ee5d67a245e6bc0eb386d6613028d956a7d067"
     },
     {
       "path": "dist/assets/app.js.map",
       "size": 84734,
-      "sha256": "0cb48c87efd5eefc57e3d4e5928ac9a2763243de7a81f331da90898ab5640bb0"
+      "sha256": "e5a8d4f4f02c59d8c2dbaaa0efbec84d7af74d26315f1f68ccc3cd1981ddd2ef"
     },
     {
       "path": "dist/assets/charts.js",
@@ -232,8 +232,8 @@
     },
     {
       "path": "tools/create_support_export.py",
-      "size": 17963,
-      "sha256": "c4baa010555e3702714e47e223ae19a9621677dfe223ef7ad60a9698c799adf6"
+      "size": 17965,
+      "sha256": "583998de918f69c9f9f4f225ce96275cb7b39a5e8364e2334b16f4fd4f94021c"
     },
     {
       "path": "tools/diagnostic_runtime.py",
