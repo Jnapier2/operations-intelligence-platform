@@ -4,7 +4,6 @@ from __future__ import annotations
 
 import argparse
 import json
-import mimetypes
 import os
 import socket
 import sys
@@ -33,11 +32,14 @@ MAX_DIAGNOSTIC_BODY = 32_000
 MAX_API_BODY = 8 * 1024 * 1024
 STARTUP_STATUS = ROOT / "state" / "latest_startup_status.json"
 FIELD_READINESS_REPORT = ROOT / "reports" / "field_readiness_report.json"
-
-mimetypes.add_type("text/javascript", ".js")
-mimetypes.add_type("application/json", ".json")
-mimetypes.add_type("text/css", ".css")
-mimetypes.add_type("text/csv", ".csv")
+STATIC_CONTENT_TYPES = {
+    ".css": "text/css; charset=utf-8",
+    ".csv": "text/csv; charset=utf-8",
+    ".html": "text/html; charset=utf-8",
+    ".js": "text/javascript; charset=utf-8",
+    ".json": "application/json; charset=utf-8",
+    ".map": "application/json; charset=utf-8",
+}
 
 
 def load_identity() -> tuple[str, str]:
@@ -142,6 +144,18 @@ def probe_http_health(url: str, version: str, build: str) -> dict[str, Any]:
 
 def handler_factory(runtime: DiagnosticRuntime, identity_result: dict[str, Any], run_id: str, version: str, build: str, platform_api: PlatformApi | None = None):
     api = platform_api or PlatformApi(OperationalStore(), release_passed=bool(identity_result.get("passed")))
+    dist_root = DIST.resolve()
+    static_files: dict[str, Path] = {}
+    for candidate in dist_root.rglob("*"):
+        if not candidate.is_file():
+            continue
+        resolved = candidate.resolve()
+        try:
+            relative = resolved.relative_to(dist_root)
+        except ValueError:
+            continue
+        static_files[f"/{relative.as_posix()}"] = resolved
+
     class Handler(BaseHTTPRequestHandler):
         server_version = "OperationsIntelligenceLocal"
         sys_version = ""
@@ -220,17 +234,11 @@ def handler_factory(runtime: DiagnosticRuntime, identity_result: dict[str, Any],
             requested = urllib.parse.unquote(parsed.path)
             if requested == "/":
                 requested = "/index.html"
-            relative = Path(requested.lstrip("/"))
-            if relative.is_absolute() or ".." in relative.parts:
+            if not requested.startswith("/") or "\\" in requested:
                 self._json(HTTPStatus.BAD_REQUEST, {"error": "Invalid path."})
                 return
-            target = (DIST / relative).resolve()
-            try:
-                target.relative_to(DIST.resolve())
-            except ValueError:
-                self._json(HTTPStatus.BAD_REQUEST, {"error": "Invalid path."})
-                return
-            if not target.is_file():
+            target = static_files.get(requested)
+            if target is None:
                 self._json(HTTPStatus.NOT_FOUND, {"error": "Not found."})
                 return
             try:
@@ -239,9 +247,7 @@ def handler_factory(runtime: DiagnosticRuntime, identity_result: dict[str, Any],
                 runtime.logger.log("ERROR", "Static file read failed", f"{target.name}: {exc}")
                 self._json(HTTPStatus.INTERNAL_SERVER_ERROR, {"error": "The requested file could not be read."})
                 return
-            content_type = mimetypes.guess_type(target.name)[0] or "application/octet-stream"
-            if content_type.startswith("text/") or content_type in {"application/javascript", "application/json"}:
-                content_type += "; charset=utf-8"
+            content_type = STATIC_CONTENT_TYPES.get(target.suffix.lower(), "application/octet-stream")
             cache = "public, max-age=31536000, immutable" if target.parent.name == "assets" else "no-store"
             self._headers(HTTPStatus.OK, content_type, len(body), cache)
             self.wfile.write(body)
