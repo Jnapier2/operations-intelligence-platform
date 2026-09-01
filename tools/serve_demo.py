@@ -234,7 +234,11 @@ def handler_factory(runtime: DiagnosticRuntime, identity_result: dict[str, Any],
             requested = urllib.parse.unquote(parsed.path)
             if requested == "/":
                 requested = "/index.html"
-            if not requested.startswith("/") or "\\" in requested:
+            if (
+                not requested.startswith("/")
+                or "\\" in requested
+                or any(segment in {".", ".."} for segment in requested.split("/"))
+            ):
                 self._json(HTTPStatus.BAD_REQUEST, {"error": "Invalid path."})
                 return
             target = static_files.get(requested)
