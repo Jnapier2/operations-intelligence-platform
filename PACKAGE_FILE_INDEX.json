@@ -285,7 +285,7 @@
     },
     {
       "path": "MANIFEST.json",
-      "sha256": "4fd8058ea87bcf7ecdefef238a178cc2481a1f68efb33383fce0f01d8cf142fa",
+      "sha256": "b1b87daa021f47ca1480b04fbffa6009a97b7cf096dc41803efe9dfa998c8e3b",
       "size": 9022
     },
     {
@@ -340,27 +340,27 @@
     },
     {
       "path": "reports/package_inventory_report.json",
-      "sha256": "b386803b0e80895266fb1c1ecbeda350b4eb73b9ec8150045895c309a24aba5b",
+      "sha256": "0341aa19271a40166d490cd450aa3c28cfc7d76307f98299aba15212da195b52",
       "size": 3245
     },
     {
       "path": "reports/platform_foundation_test_report.json",
-      "sha256": "fa9d214cbb4bfc2b3a48b74ed10b875fda849407638408aa3f85eb3a2c43ed9b",
+      "sha256": "4149a78c79262574c5d9fcd754847c74cd8b294627ce03d452c8decb36c3fc0c",
       "size": 18444
     },
     {
       "path": "reports/release_contract_test_report.json",
-      "sha256": "872cf53928f596203f18bcffe17101ebf859f0c3f0630801db91d18ca7fbc081",
+      "sha256": "1ea68f2b92e7df73ebaf80a01769cf1487c554d1d4b54fb436cfdf5216e56200",
       "size": 3445
     },
     {
       "path": "reports/test_report.json",
-      "sha256": "207acff46d76f2d828321ef79d7b1f7ec82bceee3589e85c16b720b973097b68",
+      "sha256": "88050a7b5086e23b3b163ea8c2d77aa6245be5cca07792c40bd713bcd3b05252",
       "size": 4734
     },
     {
       "path": "reports/verification_report.json",
-      "sha256": "7d2bd30f23ad109130af931fa3111b045d56051610f8e17944db45737d76a2b9",
+      "sha256": "7778c8a79f4518662f6fe8abd59fec65766cab60665688262226661af9b53294",
       "size": 4311
     },
     {
@@ -485,8 +485,8 @@
     },
     {
       "path": "tools/serve_demo.py",
-      "sha256": "44970786cbceba449c357ed8f3fd8894096d633d40836d03367394d3a6ba93f7",
-      "size": 25477
+      "sha256": "1fa7b6b2d456006a409d63a8e9f228eaacae3ec302c882844f6f3c400e52b1ba",
+      "size": 25897
     },
     {
       "path": "tools/source_connectors.py",
@@ -509,7 +509,7 @@
       "size": 6
     }
   ],
-  "generated_at": "2026-09-01T08:07:34.071245+00:00",
+  "generated_at": "2026-09-01T08:50:13.404995+00:00",
   "index_self_excluded": true,
   "indexed_file_count": 101,
   "package_id": "operations-intelligence-platform",
