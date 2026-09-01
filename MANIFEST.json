@@ -5,7 +5,7 @@
   "version": "0.3.1",
   "build": "OIAP-0.3.1-20260831-FIELDLOG1",
   "release_channel": "field-log-hardening",
-  "generated_at": "2026-09-01T08:01:04.511843+00:00",
+  "generated_at": "2026-09-01T08:49:17.044497+00:00",
   "managed_roots": [
     "dist",
     "netlify/functions",
@@ -252,8 +252,8 @@
     },
     {
       "path": "tools/serve_demo.py",
-      "size": 25477,
-      "sha256": "44970786cbceba449c357ed8f3fd8894096d633d40836d03367394d3a6ba93f7"
+      "size": 25897,
+      "sha256": "1fa7b6b2d456006a409d63a8e9f228eaacae3ec302c882844f6f3c400e52b1ba"
     },
     {
       "path": "tools/source_connectors.py",

@@ -169,8 +169,15 @@ def handler_factory(runtime: DiagnosticRuntime, identity_result: dict[str, Any],
                 "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; "
                 "connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'self'; form-action 'self'",
             )
-            for name, value in (extra_headers or {}).items():
-                self.send_header(name, value)
+            if extra_headers:
+                unexpected = set(extra_headers) - {"Set-Cookie"}
+                if unexpected:
+                    raise ValueError("Unsupported API response header.")
+                set_cookie = extra_headers.get("Set-Cookie")
+                if set_cookie is not None:
+                    if not set_cookie or "\r" in set_cookie or "\n" in set_cookie:
+                        raise ValueError("Invalid API response header value.")
+                    self.send_header("Set-Cookie", set_cookie)
             self.end_headers()
 
         def _json(self, status: int, payload: dict[str, Any], extra_headers: dict[str, str] | None = None) -> None:
