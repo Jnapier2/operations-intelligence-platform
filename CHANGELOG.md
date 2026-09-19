@@ -1,3 +1,17 @@
+# Source-adapter maintenance candidate — September 19, 2026
+
+Build `OIAP-0.3.1-20260919-CONNECTOR1`, application version 0.3.1.
+
+- Require Boolean enabled controls and integer byte limits rather than coercing strings or defaulting invalid values.
+- Read only bounded regular project-local files and reject lexical links/reparse points before resolution.
+- Reject duplicate/non-finite registry values; keep registry limits separate from the existing 8 MiB source limit.
+- Require the browser QA harness to retain Chromium sandboxing; unsupported hosts must report a blocked check rather than disable it.
+- Run the focused adapter and real-store integration suite through the established platform-foundation action.
+- Rebuild runtime identities, managed hashes, static assets, and package index through the existing builders.
+- Preserve existing analytics, data, migrations, role controls, dependencies, launchers and historical rollback.
+
+This is not a full hostile-writer sandbox, independent-bootstrap trust redesign, or native Windows/Norton qualification.
+
 # Changelog
 
 ## 0.3.1 — Field Log Hygiene & Evidence Hardening — 2026-08-31

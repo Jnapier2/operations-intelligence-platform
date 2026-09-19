@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Render the compiled browser application without external navigation.
 
-The build environment blocks Chromium navigation by administrator policy. This
-harness executes the exact compiled modules in an about:blank document, with a
-memory-only localStorage and same-origin fetch responses for committed demo data.
+This offline harness executes the compiled modules in an about:blank document,
+with memory-only localStorage and fetch responses for committed synthetic data.
+It does not test direct navigation, persistent browser state, or an OS policy.
 """
 from __future__ import annotations
 
@@ -85,11 +85,12 @@ page_errors: list[str] = []
 assertions: list[str] = []
 
 with sync_playwright() as pw:
-    launch_options = {"headless": True, "args": ["--no-sandbox"]}
+    launch_options = {"headless": True, "chromium_sandbox": True}
     system_chromium = Path("/usr/bin/chromium")
     if system_chromium.is_file():
         launch_options["executable_path"] = str(system_chromium)
     browser = pw.chromium.launch(**launch_options)
+    browser_version = browser.version
     page = browser.new_page(viewport={"width": 1440, "height": 1000}, device_scale_factor=1)
     page.on("console", lambda msg: console_errors.append(msg.text) if msg.type == "error" else None)
     page.on("pageerror", lambda exc: page_errors.append(str(exc)))
@@ -154,8 +155,10 @@ report = {
     "schema_version": 1,
     "passed": not console_errors and not page_errors,
     "method": "compiled-module inline render harness",
-    "navigation_constraint": "Direct Chromium URL navigation was blocked by administrator policy in the build environment; the exact compiled modules were rendered in about:blank with committed demo data and a memory-only storage shim.",
+    "navigation_constraint": "Direct URL navigation is not exercised by this harness. Compiled modules are rendered in about:blank with committed synthetic data and a memory-only storage shim; no current administrator-policy finding is inferred.",
     "browser": "Chromium headless",
+    "sandbox_requested": True,
+    "browser_version": browser_version,
     "viewport_desktop": "1440x1000",
     "viewport_mobile": "390x844",
     "assertions": assertions,

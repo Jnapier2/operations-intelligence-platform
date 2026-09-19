@@ -5,8 +5,8 @@
   "showcase_module": "Service Operations Command Center",
   "package_id": "operations-intelligence-platform",
   "version": "0.3.1",
-  "build": "OIAP-0.3.1-20260831-FIELDLOG1",
-  "release_channel": "field-log-hardening",
+  "build": "OIAP-0.3.1-20260919-CONNECTOR1",
+  "release_channel": "source-adapter-candidate",
   "publisher": "Gateway Information Group LLC",
   "copyright": "Copyright \u00a9 2026 Gateway Information Group LLC. All rights reserved.",
   "source_baseline": "Gateway shared project defaults v2.17.13",
@@ -22,7 +22,7 @@
     "optional_function": "netlify/functions/summary.mjs"
   },
   "data_classification": "Synthetic demo data; project-local governed SQLite state; derived process intelligence; browser-local uploaded data only in static fallback",
-  "release_date": "2026-08-31",
+  "release_date": "2026-09-19",
   "execution": {
     "namespace": "OperationsIntelligence",
     "canonical_entrypoint": "OperationsIntelligence.bat",
@@ -62,5 +62,6 @@
         "backend": "tools/serve_demo.py --diagnostic-self-test"
       }
     ]
-  }
+  },
+  "qualification_status": "unpublished engineering candidate; see candidate evidence and limitations"
 }

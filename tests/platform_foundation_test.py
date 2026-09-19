@@ -6,6 +6,7 @@ import json
 import sqlite3
 import sys
 import tempfile
+import unittest
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -131,6 +132,11 @@ def main() -> int:
         bad_origin = api.handle_post("/api/auth/demo-login", {"Host": "127.0.0.1:8765", "Origin": "https://example.invalid", "Content-Type": "application/json"}, json.dumps({"userId": "exec-demo", "password": DEMO_PASSWORD}).encode())
         check("cross-site governed login rejected", bad_origin is not None and bad_origin.status == 403, bad_origin.status if bad_origin else None)
 
+    adapter_suite = unittest.defaultTestLoader.discover(str(ROOT / "tests"), pattern="test_source_connector_boundaries.py")
+    adapter_result = unittest.TextTestRunner(stream=sys.stderr, verbosity=2).run(adapter_suite)
+    adapter_summary = {"tests_run": adapter_result.testsRun, "failures": len(adapter_result.failures),
+                       "errors": len(adapter_result.errors), "skipped": len(adapter_result.skipped),
+                       "passed": adapter_result.wasSuccessful()}
     failed = [item for item in tests if not item["passed"]]
     metadata = json.loads((ROOT / "PACKAGE_METADATA.json").read_text(encoding="utf-8"))
     payload = {
@@ -138,18 +144,22 @@ def main() -> int:
         "project": "Operations Intelligence & Automation Platform",
         "version": (ROOT / "VERSION.txt").read_text(encoding="utf-8").strip(),
         "build": metadata.get("build"),
-        "passed": not failed,
+        "passed": not failed and adapter_result.wasSuccessful(),
         "test_count": len(tests),
         "passed_count": len(tests) - len(failed),
         "failed_count": len(failed),
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "results": tests,
+        "source_connector_tests": adapter_summary,
     }
     REPORT.parent.mkdir(parents=True, exist_ok=True)
     temp = REPORT.with_name(f".{REPORT.name}.tmp")
     temp.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
     temp.replace(REPORT)
     print(f"{payload['passed_count']}/{payload['test_count']} platform foundation checks passed.")
+    print(f"Source-adapter suite: {adapter_summary['tests_run']} run, "
+          f"{adapter_summary['failures']} failures, {adapter_summary['errors']} errors, "
+          f"{adapter_summary['skipped']} skipped.")
     return 0 if payload["passed"] else 1
 
 
