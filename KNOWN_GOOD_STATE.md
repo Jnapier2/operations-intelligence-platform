@@ -1,8 +1,17 @@
+# Candidate qualification and preserved baseline
+
+Candidate: `OIAP-0.3.1-20260919-CONNECTOR1` (application version 0.3.1).
+This build is not published or promoted to an operational known-good state.
+The exact source baseline is commit `de200badc17dbae19e020f1e699d1fb062128355`.
+Use complete verified packages in separate folders; do not mix managed files.
+
+The entry below is historical baseline evidence, not new candidate acceptance.
+
 # Save State / Qualification Status
 
 Canonical project: **Operations Intelligence & Automation Platform**
 
-## Current release
+## Prior public baseline
 
 - Version: **0.3.1**
 - Build: `OIAP-0.3.1-20260831-FIELDLOG1`

@@ -2,7 +2,9 @@
 
 **A service-operations command center that connects trusted metrics, explainable analysis, controlled automation, and measured follow-through.**
 
-Version **0.3.1** · build `OIAP-0.3.1-20260831-FIELDLOG1`
+Version **0.3.1** · candidate build `OIAP-0.3.1-20260919-CONNECTOR1`
+
+Unpublished maintenance candidate: the local source adapter validates JSON control types, bounds registry/source reads, and rejects linked input paths. Existing demo data and dependency pins are preserved. Native Windows, browser acceptance, and independent review remain separate checks.
 
 ## Overview
 
