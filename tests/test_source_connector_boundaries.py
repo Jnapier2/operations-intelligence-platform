@@ -218,14 +218,17 @@ class SourceConnectorBoundaryTests(unittest.TestCase):
             with self.assertRaisesRegex(RuntimeError,'changed while reading'):sc.read_snapshot('fixture')
 
     def test_replaced_file_is_rejected_before_reading(self):
-        real=sc.os.open; path=self.path
+        # Match the adapter's canonical root, not a temporary alias/short name.
+        real=sc.os.open; path=self.path.resolve(strict=True); injected=[]
         def replacement(target,flags,*args,**kwargs):
             if Path(target)==path:
                 other=path.with_name('replacement.csv');other.write_bytes(b'new file')
                 os.replace(other,path)
+                injected.append(path)
             return real(target,flags,*args,**kwargs)
         with mock.patch.object(sc.os,'open',side_effect=replacement):
             with self.assertRaisesRegex(RuntimeError,'changed before reading'):sc.read_snapshot('fixture')
+        self.assertEqual(injected, [path], 'Replacement fault must reach the source open')
 
     def test_source_descriptor_closes_on_oversize_rejection(self):
         self.entry['max_bytes']=1;self.save()
@@ -252,16 +255,35 @@ class SourceConnectorBoundaryTests(unittest.TestCase):
 
     def test_reparse_attribute_is_rejected_without_opening(self):
         from types import SimpleNamespace
-        real=Path.lstat
+        # Resolve before patching lstat so the injected attribute cannot affect
+        # fixture setup. The production lexical link/reparse check is unchanged.
+        real=Path.lstat; target=self.path.resolve(strict=True); injected=[]
         def attributed(path,*a,**k):
             info=real(path,*a,**k)
-            if path==self.path:
+            if path==target:
+                injected.append(target)
                 return SimpleNamespace(st_mode=info.st_mode,st_file_attributes=0x400)
             return info
-        # Registry was already validated. Exercise source-path handling directly.
+        # Exercise source-path handling directly; no registry or source is opened.
         with mock.patch.object(Path,'lstat',new=attributed),mock.patch.object(sc.os,'open') as opened:
             with self.assertRaisesRegex(RuntimeError,'reparse'):sc._project_file('data/source.csv')
             opened.assert_not_called()
+        self.assertEqual(injected, [target], 'Reparse fault must reach the source lstat')
+
+    def test_fault_injection_uses_canonical_target_with_aliased_root(self):
+        # A real parent/.. alias needs no symlink privilege on Windows. It
+        # exercises different spellings of the same fixture, not a new source.
+        marker=self.root/'path spelling';marker.mkdir()
+        alias=marker/'..'
+        self.assertNotEqual(alias, self.root.resolve(strict=True))
+        self.assertTrue(alias.samefile(self.root))
+        self.root=alias;self.path=alias/'data/source.csv'
+        with mock.patch.object(sc,'ROOT',alias),mock.patch.object(sc,'CONFIG',alias/'config/source_connectors.json'):
+            for name in ('test_reparse_attribute_is_rejected_without_opening',
+                         'test_replaced_file_is_rejected_before_reading'):
+                with self.subTest(injected_fault=name):
+                    self.path.write_bytes(self.raw)
+                    getattr(self,name)()
 
 
 class SourceConnectorStoreIntegrationTests(unittest.TestCase):

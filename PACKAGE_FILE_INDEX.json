@@ -427,8 +427,8 @@
     },
     {
       "path": "tests/test_source_connector_boundaries.py",
-      "sha256": "5f41d4378c6206c87790777c227a6728963dbc37d94a061f211b30b3019fdb1c",
-      "size": 19292
+      "sha256": "5996edc4244d845f988a9f21b8a7ba711ddaddd5ed16c8f6375ae18b85185fa5",
+      "size": 20786
     },
     {
       "path": "tools/build.py",
@@ -486,7 +486,7 @@
       "size": 452
     }
   ],
-  "generated_at": "2026-09-19T10:27:50.694254+00:00",
+  "generated_at": "2026-09-24T14:44:44.553428+00:00",
   "index_self_excluded": true,
   "indexed_file_count": 96,
   "package_id": "operations-intelligence-platform",
