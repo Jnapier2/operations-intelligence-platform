@@ -1,0 +1,5 @@
+Operations Intelligence 0.4.1 reviewer demo
+
+Copyright © 2026 Gateway Information Group LLC. All rights reserved.
+
+The original demonstration pages and sanitized evidence are provided for technical evaluation. No license to modify or redistribute these first-party materials is granted. This archive contains no third-party runtime dependencies.
