@@ -4,6 +4,10 @@
 
 Version **0.3.1** · build `OIAP-0.3.1-20260831-FIELDLOG1`
 
+## Explore the reviewer demo
+
+Download and extract the ZIP from the [0.4.1 offline reviewer demo](https://github.com/Jnapier2/operations-intelligence-platform/releases/tag/v0.4.1-reviewer-demo), then open `index.html`. Review the synthetic operations scorecard and compare baseline, demand, and capacity scenarios.
+
 ## Overview
 
 This project demonstrates a complete operational decision loop rather than a standalone dashboard. It turns service-operation records into trusted metrics, explains where work is breaking down, converts evidence into controlled action, tracks follow-through, and measures whether improvement occurred.
