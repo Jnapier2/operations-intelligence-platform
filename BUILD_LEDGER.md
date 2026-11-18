@@ -1,3 +1,13 @@
+# Source-adapter integration candidate
+
+Build: `OIAP-0.3.1-20260919-CONNECTOR1`.
+Source: exact current public tree at `de200badc17dbae19e020f1e699d1fb062128355`.
+The adapter test file is executed by the existing platform-foundation runner and therefore by the established launcher and hosted workflow.
+The analytics identity assertion is updated to the candidate build; its exact-match check remains intact.
+Browser QA requires sandboxing. A blocked browser check is not a passed validation.
+
+The following ledger is preserved historical evidence and does not qualify this candidate.
+
 # Build Ledger — v0.3.1
 
 Canonical project: **Professional Portfolio — Operations Intelligence & Automation Platform**  

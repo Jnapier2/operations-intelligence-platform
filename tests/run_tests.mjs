@@ -275,7 +275,7 @@ test("Runtime release identity is compiled into the browser bundle", () => {
   assert.equal(APP_VERSION, release.version);
   assert.equal(APP_BUILD, release.build);
   assert.equal(APP_VERSION, "0.3.1");
-  assert.equal(APP_BUILD, "OIAP-0.3.1-20260831-FIELDLOG1");
+  assert.equal(APP_BUILD, "OIAP-0.3.1-20260919-CONNECTOR1");
 });
 
 test("Production shell references only local static assets", () => {

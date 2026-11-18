@@ -3,9 +3,9 @@
   "project": "Operations Intelligence & Automation Platform",
   "package_id": "operations-intelligence-platform",
   "version": "0.3.1",
-  "build": "OIAP-0.3.1-20260831-FIELDLOG1",
-  "release_channel": "field-log-hardening",
-  "generated_at": "2026-09-01T09:04:57.721048+00:00",
+  "build": "OIAP-0.3.1-20260919-CONNECTOR1",
+  "release_channel": "source-adapter-candidate",
+  "generated_at": "2026-09-19T09:49:29.223727+00:00",
   "managed_roots": [
     "dist",
     "netlify/functions",
@@ -23,7 +23,7 @@
   "managed_file_count": 46,
   "control_file_sha256": {
     "VERSION.txt": "79e3f22ca37c7fdf4c29ae3648d6b008c3cb6547260a453409275470919dc674",
-    "PACKAGE_METADATA.json": "6e8883e1764ab0f79e31b0dbd3c791116a718f6d72804467817e223916a1c61c",
+    "PACKAGE_METADATA.json": "6595859f6ceaa0c14e7775df6d63c65bb68d620bdcb916d70dcbe15e3b39f27f",
     "SBOM.json": "7083be819b5dca9e02380bc747d5d997439c553517582e51404422f2e64e8b65",
     "netlify.toml": "3694bac386916e2866395c2cdf284420697d36474bd3fea29f8167a5917b0890",
     "OperationsIntelligence.bat": "f41e2df3b045dbe8fe747f447b983e61027dd42c31b6151fff2e153d928e50a3",
@@ -157,13 +157,13 @@
     },
     {
       "path": "dist/assets/release.generated.js",
-      "size": 214,
-      "sha256": "0db5a25098a76a29aff3da6a749b673c29a953b62e72d0541da6ec88ebad7382"
+      "size": 215,
+      "sha256": "4a872f0e82ef5feeb4c3d77a8a2d9311b45af51e215444e0b3dcc5e77c8eece5"
     },
     {
       "path": "dist/assets/release.generated.js.map",
       "size": 224,
-      "sha256": "412cba2ed4102646597e05c7e6f95097d5c90bf42cf852ba1ecbf256aaae237e"
+      "sha256": "481f0e09bd209bbc2830c112686c91c8ac5118b81648c12dd0637badea7b0d8c"
     },
     {
       "path": "dist/assets/storage.js",
@@ -217,8 +217,8 @@
     },
     {
       "path": "dist/release.json",
-      "size": 459,
-      "sha256": "089086236e5ecd8091737777f4567b019511f80819e96273a9146a1a31d3c0bf"
+      "size": 454,
+      "sha256": "1e56900025ee6826a52c04f3522acb2909c566b1742f1c7400b83bc1000fa57c"
     },
     {
       "path": "dist/styles.css",
@@ -257,8 +257,8 @@
     },
     {
       "path": "tools/source_connectors.py",
-      "size": 3304,
-      "sha256": "73e28cef9e27c243a994c1fa090f9f333dadaa2d93ca6cdd882544523121d190"
+      "size": 7581,
+      "sha256": "9ea2baad3fd318478ec22c2fb66c4ec8285a575298439d7bad3e2f8bf8966a3c"
     }
   ],
   "rights": "Copyright \u00a9 2026 Gateway Information Group LLC. All rights reserved."
