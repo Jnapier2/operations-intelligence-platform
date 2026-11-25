@@ -112,6 +112,15 @@ Current deterministic results include:
 ## Two truthful operating modes
 
 ### Governed local mode
+
+**Check SQLite before starting the runnable edition.** Use the same Python interpreter that launches the app.
+
+```powershell
+python -c "import sqlite3; print(sqlite3.sqlite_version)"
+```
+
+Use SQLite **3.51.3 or later**, or a documented backport in **3.50.7** or **3.44.6**, to get the write-ahead log data-integrity fix. If your Python environment lacks the fix, use the offline reviewer demo above. [SQLite advisory](https://sqlite.org/wal.html#the_wal_reset_bug)
+
 Run through the Windows launcher or Python local server. It provides:
 
 - project-local SQLite state in WAL mode;
